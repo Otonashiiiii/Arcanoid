@@ -4,18 +4,29 @@ public class BallControl : MonoBehaviour
 {
 
     private Rigidbody BallRigidbody;
-    private BatControl Bat;
+    private float leftBorder;
+    private float rightBorder;
+    private float topBorder;
+    private float startOffsetFromTop = 121f;
+
+    private BatControl bat;
+
 
 
     void Awake()
     {
-        BallRigidbody= GetComponent<Rigidbody>();
-        Bat = GameObject.FindWithTag("Bat").GetComponent<BatControl>();
+        
     }
    
     private void Start()
     {
-       
+        BallRigidbody = GetComponent<Rigidbody>();
+        leftBorder = GameManager.LeftBorderX;
+        rightBorder = GameManager.RightBorderX;
+        topBorder = GameManager.UpBorderZ;
+
+        bat = GameObject.Find("Bat").GetComponent<BatControl>();
+
         BallStartPosition();
     }
     
@@ -23,28 +34,34 @@ public class BallControl : MonoBehaviour
     {
        if(Input.GetKey(KeyCode.M))
         {
-            BallRigidbody.AddForce(0f, 0f, -20f);
+            BallRigidbody.linearVelocity = new Vector3(0f, 0f, -40f);
+            //BallRigidbody.AddForce(0f, 0f, -20f);
         }
              
     }
 
-    void BallStartPosition()
+    //Начальная позиция шарика перед началом игры
+        void BallStartPosition()
     {
         Vector3 NewPosition;
-        
-        
-        NewPosition = Bat.transform.position;
-        NewPosition.z = NewPosition.z - 4f;
-        NewPosition.x = NewPosition.x - 2f;
+
+
+        NewPosition = transform.position;
+        NewPosition.x = leftBorder - (leftBorder - rightBorder) / 2;
+        NewPosition.z = topBorder + startOffsetFromTop;
         transform.position = NewPosition;
     }
 
+    //Обработка выхода шарика из игры
     private void OnTriggerEnter(Collider other)
     {
+       
+        
+
         if (other.CompareTag("FailLine"))
         {
             BallRigidbody.linearVelocity = new Vector3(0f, 0f, 0f);
-            Bat.BatStartPosition();
+            bat.BatStartPosition();
             BallStartPosition();
         }
     }
