@@ -1,0 +1,976 @@
+{
+    "level": [
+        {
+            "levelNumber": 0,
+            "ballSpeed": 50.0,
+            "targets": [
+                {
+                    "line": 0,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 2,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 3,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 4,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 5,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 1,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 2,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 3,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 4,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 5,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 6,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 0,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 1,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 2,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 3,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 4,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 5,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 6,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 7,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 0,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 1,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 2,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 3,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 4,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 5,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 6,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 7,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 0,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 1,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 2,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 3,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 4,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 5,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 6,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 7,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 1,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 2,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 3,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 4,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 5,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 6,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 2,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 3,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 4,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 5,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                }
+            ]
+        },
+        {
+            "levelNumber": 1,
+            "ballSpeed": 50.0,
+            "targets": [
+                {
+                    "line": 0,
+                    "column": 0,
+                    "targetType": "triple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 1,
+                    "targetType": "triple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 2,
+                    "targetType": "triple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 3,
+                    "targetType": "triple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 4,
+                    "targetType": "triple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 5,
+                    "targetType": "triple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 6,
+                    "targetType": "triple",
+                    "giftType": ""
+                },
+                {
+                    "line": 0,
+                    "column": 7,
+                    "targetType": "triple",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 1,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 0,
+                    "targetType": "double",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 1,
+                    "targetType": "double",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 2,
+                    "targetType": "double",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 3,
+                    "targetType": "double",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 4,
+                    "targetType": "double",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 5,
+                    "targetType": "double",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 6,
+                    "targetType": "double",
+                    "giftType": ""
+                },
+                {
+                    "line": 2,
+                    "column": 7,
+                    "targetType": "double",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 3,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 0,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 1,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 2,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 3,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 4,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 5,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 6,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 4,
+                    "column": 7,
+                    "targetType": "simple",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 5,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 6,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 7,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 8,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 0,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 1,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 2,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 3,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 4,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 5,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 6,
+                    "targetType": "",
+                    "giftType": ""
+                },
+                {
+                    "line": 9,
+                    "column": 7,
+                    "targetType": "",
+                    "giftType": ""
+                }
+            ]
+        }
+    ]
+}

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class BallControl : MonoBehaviour
@@ -11,23 +12,27 @@ public class BallControl : MonoBehaviour
 
     private BatControl bat;
 
+    [SerializeField] private TMP_Text livesValue;
 
 
     void Awake()
     {
-        
+        BallRigidbody = GetComponent<Rigidbody>();
+        bat = GameObject.Find("Bat").GetComponent<BatControl>();
+
+        leftBorder = GameManager.LeftBorderX;
+        rightBorder = GameManager.RightBorderX;
+        topBorder = GameManager.UpBorderZ;
     }
    
     private void Start()
     {
-        BallRigidbody = GetComponent<Rigidbody>();
-        leftBorder = GameManager.LeftBorderX;
-        rightBorder = GameManager.RightBorderX;
-        topBorder = GameManager.UpBorderZ;
+        livesValue.text = GameManager.LivesLeft.ToString();
 
-        bat = GameObject.Find("Bat").GetComponent<BatControl>();
 
-        BallStartPosition();
+
+
+        //BallStartPosition();
     }
     
     private void FixedUpdate()
@@ -37,11 +42,10 @@ public class BallControl : MonoBehaviour
             BallRigidbody.linearVelocity = new Vector3(0f, 0f, -40f);
             //BallRigidbody.AddForce(0f, 0f, -20f);
         }
-             
     }
 
     //Начальная позиция шарика перед началом игры
-        void BallStartPosition()
+    public void BallStartPosition()
     {
         Vector3 NewPosition;
 
@@ -55,14 +59,19 @@ public class BallControl : MonoBehaviour
     //Обработка выхода шарика из игры
     private void OnTriggerEnter(Collider other)
     {
-       
-        
-
         if (other.CompareTag("FailLine"))
         {
-            BallRigidbody.linearVelocity = new Vector3(0f, 0f, 0f);
-            bat.BatStartPosition();
-            BallStartPosition();
+            GameManager.LivesLeft--;
+            livesValue.text = GameManager.LivesLeft.ToString();
+            StartPosition();
         }
+    }
+
+    //установка шарика и биты на стартовую позицию
+    public void StartPosition()
+    {
+        BallRigidbody.linearVelocity = new Vector3(0f, 0f, 0f);
+        bat.BatStartPosition();
+        BallStartPosition();
     }
 }

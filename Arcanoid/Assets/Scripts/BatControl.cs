@@ -21,7 +21,7 @@ public class BatControl : MonoBehaviour
         leftBorder = GameManager.LeftBorderX;
         rightBorder = GameManager.RightBorderX;
 
-        BatStartPosition();
+        //BatStartPosition();
     }
 
     void FixedUpdate()

@@ -6,9 +6,24 @@ public class TargetsControl : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreValue;
 
+    private int collisionCount;
+
     void Start()
     {
-        
+        if(gameObject.CompareTag("SimpleTargets"))
+        {
+            collisionCount = 1;
+        } 
+        else if (gameObject.CompareTag("DoubleTargets"))
+        {
+            collisionCount = 2;
+        }
+        else if (gameObject.CompareTag("TripleTargets"))
+        {
+            collisionCount = 3;
+        }
+
+
     }
 
     // Update is called once per frame
@@ -24,13 +39,14 @@ public class TargetsControl : MonoBehaviour
         {
             GameManager.GameScore += 10;
             scoreValue.text=GameManager.GameScore.ToString();
-            GameManager.TargetsCount -= 1;
-            Destroy(gameObject);
+            collisionCount--;
+            if(collisionCount == 0)
+            {
+                GameManager.TargetsCount -= 1;
+                Destroy(gameObject);
+            }
         }
-        if (GameManager.TargetsCount == 0)
-        {
-            Debug.Log("End of level");
-        }
+        
         
 
     }

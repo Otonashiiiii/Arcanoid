@@ -8,6 +8,9 @@ TagManager:
   - Bat
   - FailLine
   - LeftBorder
+  - SimpleTargets
+  - DoubleTargets
+  - TripleTargets
   layers:
   - Default
   - TransparentFX

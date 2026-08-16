@@ -14,22 +14,97 @@ public class GameManager : MonoBehaviour
     //Счетчик мишеней в уровне
     public static int TargetsCount;
 
-    private GameObject _obj;
+    //Количество уровней в игре
+    public static int MaxLevel = 2;
 
-   
+    //Количество жизней игрока
+    public static int LivesLeft = 5;
+
+    //Номер текущего уровня игры
+    public static int CurrentLevel = 0;
+
+    //Признак паузы в игре
+    public static bool onPause = false;
+
+    //Признак перехода на следующий уровень
+    public static bool nextLevel = false;
+
+
+    private GameObject obj;
+    private LevelGenerator levelGenerator;
+    private BallControl ballControl;
+
+    [SerializeField] private Canvas EOLMenu;
+
     void Awake()
     {
         
-        _obj = GameObject.Find("LeftBorder");
-        LeftBorderX=_obj.transform.position.x;
+        obj = GameObject.Find("LeftBorder");
+        LeftBorderX=obj.transform.position.x;
         
-        _obj = GameObject.Find("UpBorder");
-        UpBorderZ = _obj.transform.position.z;
+        obj = GameObject.Find("UpBorder");
+        UpBorderZ = obj.transform.position.z;
 
-        _obj = GameObject.Find("RightBorder");
-        RightBorderX = _obj.transform.position.x;
+        obj = GameObject.Find("RightBorder");
+        RightBorderX = obj.transform.position.x;
 
         GameScore = 0;
+
+        levelGenerator = GameObject.Find("LevelGenerator").GetComponent<LevelGenerator>();
+        ballControl=GameObject.Find("Ball").GetComponent<BallControl>();
+        
+    }
+
+    private void Start()
+    {
+        levelGenerator.BuildLevel(CurrentLevel);
+        ballControl.StartPosition();
+        //levelGenerator.CreateLevel();
+    }
+
+    private void Update()
+    {
+        if(LivesLeft == 0)
+        {
+            EndOfGame();
+        }
+
+        if (TargetsCount == 0 && onPause == false)
+        {
+            if(CurrentLevel < MaxLevel-1)
+            {
+                Time.timeScale = 0f;
+                onPause = true;
+                Cursor.visible = true;
+                EOLMenu.enabled = true;
+            }
+            else
+            {
+                EndOfGame();
+            }
+            
+        }
+        if (nextLevel == true && CurrentLevel < MaxLevel)
+        {
+            levelGenerator.BuildLevel(CurrentLevel);
+            ballControl.StartPosition();
+            nextLevel = false;
+            onPause = false;
+        }
+            
+        
+    }
+    public void EndOfGame()
+    {
+        if(TargetsCount == 0 && CurrentLevel == MaxLevel-1)
+        {
+            Debug.Log("Victory!!!");
+
+        }
+        else
+        {
+            Debug.Log("Game Over");
+        }
         
     }
 
