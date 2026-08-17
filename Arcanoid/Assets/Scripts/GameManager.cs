@@ -30,6 +30,16 @@ public class GameManager : MonoBehaviour
     //Признак перехода на следующий уровень
     public static bool nextLevel = false;
 
+    //Признак шарика на бите
+    public static bool ballOnBat = true;
+
+    //Скорость горизонтального движения биты
+    public static float batSpeed = 50f;
+
+    //Скорость движения шарика
+    public static float ballSpeed;
+
+
 
     private GameObject obj;
     private LevelGenerator levelGenerator;
@@ -80,6 +90,7 @@ public class GameManager : MonoBehaviour
         if (nextLevel && CurrentLevel < MaxLevel)
         {
             levelGenerator.BuildLevel(CurrentLevel);
+            ballOnBat = true;
             ballControl.StartPosition();
             nextLevel = false;
         }

@@ -313,7 +313,7 @@
                 {
                     "line": 6,
                     "column": 3,
-                    "targetType": "",
+                    "targetType": "simple",
                     "giftType": ""
                 },
                 {
@@ -709,7 +709,7 @@
                 {
                     "line": 4,
                     "column": 4,
-                    "targetType": "",
+                    "targetType": "triple",
                     "giftType": ""
                 },
                 {
@@ -763,7 +763,7 @@
                 {
                     "line": 5,
                     "column": 5,
-                    "targetType": "",
+                    "targetType": "double",
                     "giftType": ""
                 },
                 {
@@ -793,19 +793,19 @@
                 {
                     "line": 6,
                     "column": 2,
-                    "targetType": "",
+                    "targetType": "simple",
                     "giftType": ""
                 },
                 {
                     "line": 6,
                     "column": 3,
-                    "targetType": "",
+                    "targetType": "simple",
                     "giftType": ""
                 },
                 {
                     "line": 6,
                     "column": 4,
-                    "targetType": "",
+                    "targetType": "simple",
                     "giftType": ""
                 },
                 {

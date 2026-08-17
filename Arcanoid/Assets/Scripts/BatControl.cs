@@ -5,8 +5,7 @@ public class BatControl : MonoBehaviour
 
 {
 
-    [SerializeField] private float Speed = 50f;
-    private float HorizontalInput;
+      private float HorizontalInput;
 
     //Границы движения биты
     private float leftBorder;
@@ -29,7 +28,7 @@ public class BatControl : MonoBehaviour
         HorizontalInput = Input.GetAxis("Horizontal");
         if (((transform.position.x < (leftBorder - Offset)) && HorizontalInput < 0) || ((transform.position.x > (rightBorder + Offset)) && HorizontalInput > 0))
         {
-            transform.Translate(new Vector3(1f, 0f, 0f) * Speed * -HorizontalInput * Time.deltaTime);
+            transform.Translate(new Vector3(1f, 0f, 0f) * GameManager.batSpeed * -HorizontalInput * Time.deltaTime);
         }
         
     }

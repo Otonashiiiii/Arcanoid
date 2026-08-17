@@ -53,8 +53,9 @@ public class LevelGenerator : MonoBehaviour
             levels = JsonUtility.FromJson<Levels>(jsonString);
 
             GameManager.TargetsCount = 0;
+            GameManager.ballSpeed = levels.level[levelNum].ballSpeed;
 
-            for (int i = 0; i < levels.level[0].targets.Length; i++)
+            for (int i = 0; i < levels.level[levelNum].targets.Length; i++)
             {
                 Vector3 Pos = new Vector3(startX + levels.level[levelNum].targets[i].column * stepX * -1f, 2f, startZ + levels.level[levelNum].targets[i].line * stepZ);
                 string levelType = levels.level[levelNum].targets[i].targetType;

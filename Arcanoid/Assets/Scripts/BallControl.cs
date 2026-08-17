@@ -9,7 +9,8 @@ public class BallControl : MonoBehaviour
     private float rightBorder;
     private float topBorder;
     private float startOffsetFromTop = 121f;
-
+    private float Offset = 12f;
+    private float HorizontalInput;
     private BatControl bat;
 
     [SerializeField] private TMP_Text livesValue;
@@ -37,11 +38,22 @@ public class BallControl : MonoBehaviour
     
     private void FixedUpdate()
     {
-       if(Input.GetKey(KeyCode.M))
+        if (GameManager.ballOnBat)
         {
-            BallRigidbody.linearVelocity = new Vector3(0f, 0f, -40f);
-            //BallRigidbody.AddForce(0f, 0f, -20f);
+            HorizontalInput = Input.GetAxis("Horizontal");
+            if (((transform.position.x < (leftBorder - Offset)) && HorizontalInput < 0) || ((transform.position.x > (rightBorder + Offset)) && HorizontalInput > 0))
+            {
+                transform.Translate(new Vector3(1f, 0f, 0f) * GameManager.batSpeed * -HorizontalInput * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.M))
+            {
+                BallRigidbody.linearVelocity = new Vector3(0f, 0f, GameManager.ballSpeed * -1f);
+                GameManager.ballOnBat = false;
+
+            }
+            
         }
+        
     }
 
     //Начальная позиция шарика перед началом игры
@@ -63,6 +75,7 @@ public class BallControl : MonoBehaviour
         {
             GameManager.LivesLeft--;
             livesValue.text = GameManager.LivesLeft.ToString();
+            GameManager.ballOnBat = true;
             StartPosition();
         }
     }
