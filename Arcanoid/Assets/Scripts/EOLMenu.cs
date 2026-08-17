@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EOLMenu : MonoBehaviour
 {
     [SerializeField] private Canvas EOL;
 
-    private void Awake()
+    private void Start()
     {
         
         EOL= GetComponent<Canvas>();
@@ -13,16 +14,22 @@ public class EOLMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        EOL.enabled = false;
+        GameManager.onPause = false;
+        SceneManager.LoadSceneAsync(0);
 
     }
 
     public void NextLevel()
     {
-        GameManager.CurrentLevel++;
+        if (!GameManager.onPause)
+        {
+            GameManager.CurrentLevel++;
+            GameManager.nextLevel = true;
+        }
         Cursor.visible= false;
         Time.timeScale = 1f;
-        GameManager.nextLevel = true;
         EOL.enabled = false;
+        GameManager.onPause = false;
     }
 }

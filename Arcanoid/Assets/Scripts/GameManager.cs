@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.iOS;
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     private BallControl ballControl;
 
     [SerializeField] private Canvas EOLMenu;
+    [SerializeField] private TMP_Text pauseHeader;
 
     void Awake()
     {
@@ -64,17 +66,37 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        // Если закончились жизни, то конец игры
         if(LivesLeft == 0)
         {
             EndOfGame();
         }
-
-        if (TargetsCount == 0 && onPause == false)
+        // Проверка нажатия кнопки паузы
+        if(Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.P))
+        {
+            onPause = true;
+        }
+        // Генерация следующего уровня
+        if (nextLevel && CurrentLevel < MaxLevel)
+        {
+            levelGenerator.BuildLevel(CurrentLevel);
+            ballControl.StartPosition();
+            nextLevel = false;
+        }
+        // Вызов меню паузы / завершения уровня
+        if (TargetsCount == 0 || onPause)
         {
             if(CurrentLevel < MaxLevel-1)
             {
                 Time.timeScale = 0f;
-                onPause = true;
+                if(onPause)
+                {
+                    pauseHeader.text = "Pause";
+                }
+                else
+                {
+                    pauseHeader.text = "Level complete!!!";
+                }
                 Cursor.visible = true;
                 EOLMenu.enabled = true;
             }
@@ -84,13 +106,7 @@ public class GameManager : MonoBehaviour
             }
             
         }
-        if (nextLevel == true && CurrentLevel < MaxLevel)
-        {
-            levelGenerator.BuildLevel(CurrentLevel);
-            ballControl.StartPosition();
-            nextLevel = false;
-            onPause = false;
-        }
+        
             
         
     }

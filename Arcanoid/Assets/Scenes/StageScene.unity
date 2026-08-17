@@ -3117,6 +3117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   EOLMenu: {fileID: 156211885}
+  pauseHeader: {fileID: 1884691869}
 --- !u!1 &2109651673
 GameObject:
   m_ObjectHideFlags: 0
