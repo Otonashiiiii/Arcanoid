@@ -1,8 +1,8 @@
 <!-- UNITY CODE ASSIST INSTRUCTIONS START -->
 - Project name: Arcanoid
-- Unity version: Unity 6000.5.3f1
+- Unity version: Unity 6000.5.1f1
 - Active game object:
-  - Name: LevelGenerator
+  - Name: Canvas
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
