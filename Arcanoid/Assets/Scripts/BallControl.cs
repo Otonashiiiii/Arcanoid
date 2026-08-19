@@ -45,7 +45,7 @@ public class BallControl : MonoBehaviour
             {
                 transform.Translate(new Vector3(1f, 0f, 0f) * GameManager.batSpeed * -HorizontalInput * Time.deltaTime);
             }
-            if (Input.GetKey(KeyCode.M))
+            if (Input.GetKey(KeyCode.Space))
             {
                 BallRigidbody.linearVelocity = new Vector3(0f, 0f, GameManager.ballSpeed * -1f);
                 GameManager.ballOnBat = false;
