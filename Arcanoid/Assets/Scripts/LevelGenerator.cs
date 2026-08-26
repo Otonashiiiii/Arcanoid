@@ -6,7 +6,7 @@ using static UnityEditor.PlayerSettings;
 public class LevelGenerator : MonoBehaviour
 {
 
-    private GameObject simpleTarget, doubleTarget, tripleTarget;
+    private GameObject simpleTarget, doubleTarget, tripleTarget, currentClone;
     private float startX;
     private float startZ;
     private float stepX = 12f;
@@ -19,6 +19,7 @@ public class LevelGenerator : MonoBehaviour
     private Levels levels = new Levels();
 
     private string jsonString;
+    private TargetsControl targetsControl;
 
 
     void Start()
@@ -35,6 +36,7 @@ public class LevelGenerator : MonoBehaviour
         simpleTarget = GameObject.Find("SimpleTarget");
         doubleTarget = GameObject.Find("DoubleTarget");
         tripleTarget = GameObject.Find("TripleTarget");
+        currentClone = null;
         startX = GameManager.LeftBorderX - 8f;
         startZ = GameManager.UpBorderZ + 10f;
 
@@ -62,19 +64,28 @@ public class LevelGenerator : MonoBehaviour
                 switch(levelType)
                 {
                     case "simple":
-                        Instantiate(simpleTarget, Pos, Quaternion.identity);
+                        currentClone = (GameObject) Instantiate(simpleTarget, Pos, Quaternion.identity);
                         GameManager.TargetsCount++;
                         break;
                     case "double":
-                        Instantiate(doubleTarget, Pos, Quaternion.identity);
+                        currentClone = (GameObject) Instantiate(doubleTarget, Pos, Quaternion.identity);
                         GameManager.TargetsCount++;
                         break;
                     case "triple":
-                        Instantiate(tripleTarget, Pos, Quaternion.identity);
+                        currentClone = (GameObject) Instantiate(tripleTarget, Pos, Quaternion.identity);
                         GameManager.TargetsCount++;
                         break;
                 }
-              
+                if (currentClone != null)
+                {
+                    targetsControl = currentClone.GetComponent<TargetsControl>();
+                    targetsControl.targetGiftType = levels.level[levelNum].targets[i].giftType;
+                    currentClone = null;
+                }
+
+                
+
+
             }
         }
         else

@@ -7,10 +7,11 @@ TagManager:
   - Ball
   - Bat
   - FailLine
-  - LeftBorder
   - SimpleTargets
   - DoubleTargets
   - TripleTargets
+  - Bullet
+  - Borders
   layers:
   - Default
   - TransparentFX

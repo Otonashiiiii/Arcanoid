@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.iOS;
@@ -37,18 +38,30 @@ public class GameManager : MonoBehaviour
     //Скорость горизонтального движения биты
     public static float batSpeed;
 
+    //Позиция биты по координате Х (горизонтальная позиция)
+    public static Vector3 batPosition;
+
     //Скорость движения шарика
     public static float ballSpeed;
 
+    //Признак пойманного подарка
+    public static bool catchGift;
+
+    //Тип пойманного подарка
+    public static string usingGiftType;
+
+    //Счетчик времени действия подарка
+    public static float usingGiftTime;
+
     //Признак открытого окна сообщений
     private bool messageOpen = false;
-
-    private bool endOfGame = false;
+        
     private bool closeScene = false;
+    private float timeDelay = 0f;
 
 
 
-    private GameObject obj;
+    private GameObject obj, bulletObject;
     private LevelGenerator levelGenerator;
     private BallControl ballControl;
 
@@ -71,6 +84,9 @@ public class GameManager : MonoBehaviour
         onPause = false;
         nextLevel = false;
         batSpeed = 50f;
+        catchGift= false;
+        usingGiftType = "";
+        usingGiftTime = 0f;
 
         obj = GameObject.Find("LeftBorder");
         LeftBorderX = obj.transform.position.x;
@@ -80,6 +96,8 @@ public class GameManager : MonoBehaviour
 
         obj = GameObject.Find("RightBorder");
         RightBorderX = obj.transform.position.x;
+
+        bulletObject = GameObject.Find("Bullet");
     }
 
     private void Start()
@@ -97,15 +115,13 @@ public class GameManager : MonoBehaviour
         if(LivesLeft == 0)
         {
             messageHeader.text = "Game Over";
-            endOfGame = true;
+            EndOfGame();
         }
-
         // Проверка нажатия кнопки паузы
         if(Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.P))
         {
             onPause = true;
         }
-
         // Генерация следующего уровня
         if (nextLevel && CurrentLevel < MaxLevel)
         {
@@ -118,27 +134,8 @@ public class GameManager : MonoBehaviour
         // Вызов меню паузы / завершения уровня
         if (TargetsCount == 0 || onPause)
         {
-            if(CurrentLevel < MaxLevel-1)
-            {
-                Time.timeScale = 0f;
-                if(onPause)
-                {
-                    pauseHeader.text = "Pause";
-                }
-                else
-                {
-                    pauseHeader.text = "Level complete!!!";
-                }
-                Cursor.visible = true;
-                EOLMenu.enabled = true;
-            }
-            else
-            {
-                messageHeader.text = "Victory!!!";
-                endOfGame = true;
-            }
+            CallPauseMenu();
         }
-
         // Закрытие окна сообщений, если пользователь нажал кнопку
         if(messageOpen && Input.anyKeyDown)
         {
@@ -150,17 +147,92 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = true;
                 SceneManager.LoadSceneAsync(0);
             }
-        }
-        //Обработка завершения игры
-        if(endOfGame)
+        }        
+        //Обработка использования подарка
+        if(usingGiftType != "")
         {
-            Time.timeScale = 0f;
-            messageOpen = true;
-            message.enabled = true;
-            closeScene = true;
-            endOfGame = false;
+            GiftInActive();
         }
         
+    }
+
+    private void GiftInActive()
+    {
+       
+        if(usingGiftTime > 0)
+        {
+            if(usingGiftType == "shoot")
+            {
+                if (Input.GetKey(KeyCode.Space) && timeDelay <= 0)
+                {
+                    MakeShoot();
+                    timeDelay = 1f;
+                }                
+                timeDelay -= Time.deltaTime;
+            }
+            usingGiftTime -= Time.deltaTime;
+        }
+        else
+        {
+            usingGiftTime = 0f;
+            usingGiftType = "";
+        }
+    }
+    private void MakeShoot()
+    {
+        float bulletSpeed = -60f;
+        
+        Vector3 bulletStartPosition = batPosition;
+        bulletStartPosition.z -= 2f;
+
+        GameObject currentBullet = Instantiate(bulletObject, bulletStartPosition, Quaternion.Euler(90, 0, 0));
+        Rigidbody bulletRigidBody = currentBullet.GetComponent<Rigidbody>();
+
+        bulletRigidBody.linearVelocity = new Vector3(0f, 0f, bulletSpeed);
+
+    }
+
+    //Обработка завершения игры
+    public void EndOfGame()
+    {
+
+        Time.timeScale = 0f;
+        messageOpen = true;
+        message.enabled = true;
+        closeScene = true;
+    }
+
+    //Вызов меню паузы
+    public void CallPauseMenu()
+    {
+
+        Time.timeScale = 0f;
+
+        if(onPause)
+        {
+            pauseHeader.text = "Pause";
+            Cursor.visible = true;
+            EOLMenu.enabled = true;
+        }
+        else if(TargetsCount == 0 && !closeScene)  //Конец уровня
+        {
+            if(CurrentLevel == MaxLevel-1) //Конец последнего уровня в игре
+            {
+                messageHeader.text = "Victory!!!";
+                EndOfGame();
+            }
+            else
+            {
+                pauseHeader.text = "Level complete!!!";
+                Cursor.visible = true;
+                EOLMenu.enabled = true;
+            }
+        }
+        else  //Ошибочный вызов функции
+        {
+            Time.timeScale = 0f;
+        }
+       
     }
          
 }

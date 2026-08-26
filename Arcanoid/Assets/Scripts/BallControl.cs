@@ -4,7 +4,7 @@ using UnityEngine;
 public class BallControl : MonoBehaviour
 {
 
-    private Rigidbody BallRigidbody;
+    private Rigidbody ballRigidBody;
     private float leftBorder;
     private float rightBorder;
     private float topBorder;
@@ -18,7 +18,7 @@ public class BallControl : MonoBehaviour
 
     void Awake()
     {
-        BallRigidbody = GetComponent<Rigidbody>();
+        ballRigidBody = GetComponent<Rigidbody>();
         bat = GameObject.Find("Bat").GetComponent<BatControl>();
 
         leftBorder = GameManager.LeftBorderX;
@@ -47,7 +47,7 @@ public class BallControl : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.Space))
             {
-                BallRigidbody.linearVelocity = new Vector3(0f, 0f, GameManager.ballSpeed * -1f);
+                ballRigidBody.linearVelocity = new Vector3(0f, 0f, GameManager.ballSpeed * -1f);
                 GameManager.ballOnBat = false;
 
             }
@@ -62,9 +62,8 @@ public class BallControl : MonoBehaviour
         Vector3 NewPosition;
 
 
-        NewPosition = transform.position;
-        NewPosition.x = leftBorder - (leftBorder - rightBorder) / 2;
-        NewPosition.z = topBorder + startOffsetFromTop;
+        NewPosition = GameManager.batPosition;
+        NewPosition.z -= 3f;
         transform.position = NewPosition;
     }
 
@@ -76,6 +75,8 @@ public class BallControl : MonoBehaviour
             GameManager.LivesLeft--;
             livesValue.text = GameManager.LivesLeft.ToString();
             GameManager.ballOnBat = true;
+            GameManager.usingGiftType = "";
+            GameManager.usingGiftTime = 0f;
             StartPosition();
         }
     }
@@ -83,8 +84,20 @@ public class BallControl : MonoBehaviour
     //установка шарика и биты на стартовую позицию
     public void StartPosition()
     {
-        BallRigidbody.linearVelocity = new Vector3(0f, 0f, 0f);
+        ballRigidBody.linearVelocity = new Vector3(0f, 0f, 0f);
         bat.BatStartPosition();
         BallStartPosition();
+    }
+
+    //Обработка подарка "липучка"
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Bat") && GameManager.usingGiftType == "sticky")
+        {
+            ballRigidBody.linearVelocity = new Vector3(0f, 0f, 0f);
+            BallStartPosition();
+            GameManager.ballOnBat = true;
+
+        }
     }
 }
