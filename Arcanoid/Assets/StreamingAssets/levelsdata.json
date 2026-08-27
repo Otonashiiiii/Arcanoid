@@ -25,7 +25,7 @@
                 {
                     "line": 0,
                     "column": 3,
-                    "targetType": "",
+                    "targetType": "simple",
                     "giftType": ""
                 },
                 {
@@ -314,7 +314,7 @@
                     "line": 6,
                     "column": 3,
                     "targetType": "simple",
-                    "giftType": ""
+                    "giftType": "shoot"
                 },
                 {
                     "line": 6,
@@ -469,7 +469,7 @@
                 {
                     "line": 9,
                     "column": 5,
-                    "targetType": "",
+                    "targetType": "simple",
                     "giftType": ""
                 },
                 {
@@ -764,7 +764,7 @@
                     "line": 5,
                     "column": 5,
                     "targetType": "double",
-                    "giftType": ""
+                    "giftType": "sticky"
                 },
                 {
                     "line": 5,

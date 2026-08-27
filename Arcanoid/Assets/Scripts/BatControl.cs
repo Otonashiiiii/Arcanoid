@@ -5,7 +5,7 @@ public class BatControl : MonoBehaviour
 
 {
 
-      private float HorizontalInput;
+    private float HorizontalInput;
 
     //Границы движения биты
     private float leftBorder;
@@ -29,6 +29,7 @@ public class BatControl : MonoBehaviour
         if (((transform.position.x < (leftBorder - Offset)) && HorizontalInput < 0) || ((transform.position.x > (rightBorder + Offset)) && HorizontalInput > 0))
         {
             transform.Translate(new Vector3(1f, 0f, 0f) * GameManager.batSpeed * -HorizontalInput * Time.deltaTime);
+            GameManager.batPosition = transform.position;
         }
         
     }
@@ -41,6 +42,7 @@ public class BatControl : MonoBehaviour
         NewPosition = transform.position;
         NewPosition.x= leftBorder - (leftBorder - rightBorder) / 2;
         transform.position= NewPosition;
+        GameManager.batPosition = transform.position;
     }
     
 }

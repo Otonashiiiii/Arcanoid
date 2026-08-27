@@ -16,6 +16,7 @@ public class EOLMenu : MonoBehaviour
     {
         EOL.enabled = false;
         GameManager.onPause = false;
+        Cursor.visible = true;
         SceneManager.LoadSceneAsync(0);
 
     }
@@ -27,7 +28,7 @@ public class EOLMenu : MonoBehaviour
             GameManager.CurrentLevel++;
             GameManager.nextLevel = true;
         }
-        Cursor.visible= false;
+        Cursor.visible = false;
         Time.timeScale = 1f;
         EOL.enabled = false;
         GameManager.onPause = false;
