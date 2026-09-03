@@ -8,7 +8,6 @@ public class BallControl : MonoBehaviour
     private float leftBorder;
     private float rightBorder;
     private float topBorder;
-    private float startOffsetFromTop = 121f;
     private float Offset = 12f;
     private float HorizontalInput;
     private BatControl bat;
