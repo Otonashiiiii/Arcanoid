@@ -1,7 +1,7 @@
 {
     "level": [
         {
-            "levelNumber": 0,
+            "levelNumber": 1,
             "ballSpeed": 50.0,
             "targets": [
                 {
@@ -230,7 +230,7 @@
                     "line": 4,
                     "column": 5,
                     "targetType": "triple",
-                    "giftType": ""
+                    "giftType": "sticky"
                 },
                 {
                     "line": 4,
@@ -487,7 +487,7 @@
             ]
         },
         {
-            "levelNumber": 1,
+            "levelNumber": 2,
             "ballSpeed": 50.0,
             "targets": [
                 {

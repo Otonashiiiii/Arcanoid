@@ -39,13 +39,7 @@ public class TargetsControl : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Ball"))
         {
-            if(targetGiftType != "")
-            {
-                giftControl = Instantiate(giftObject, startGiftPosition, Quaternion.Euler(0,0,90)).GetComponent<GiftControl>();
-                giftControl.giftType = targetGiftType;
-                
-                targetGiftType = "";
-            }            
+            CheckGift();        
             GameManager.GameScore += 10;
             collisionCount--;            
             scoreValue.text=GameManager.GameScore.ToString();            
@@ -64,12 +58,25 @@ public class TargetsControl : MonoBehaviour
 
         if (other.CompareTag("Bullet"))
         {
+            CheckGift();
             GameManager.GameScore += 10 * collisionCount;
             scoreValue.text = GameManager.GameScore.ToString();
             collisionCount = 0;
             GameManager.TargetsCount -= 1;
             Destroy(gameObject);
         }  
+    }
+
+    private void CheckGift()
+    {
+
+        if (targetGiftType != "")
+        {
+            giftControl = Instantiate(giftObject, startGiftPosition, Quaternion.Euler(0, 0, 90)).GetComponent<GiftControl>();
+            giftControl.giftType = targetGiftType;
+
+            targetGiftType = "";
+        }
     }
 
 }

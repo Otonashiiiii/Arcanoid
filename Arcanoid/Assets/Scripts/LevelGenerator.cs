@@ -1,5 +1,6 @@
 using System.Collections;
 using System.IO;
+using TMPro;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -20,11 +21,13 @@ public class LevelGenerator : MonoBehaviour
 
     private string jsonString;
     private TargetsControl targetsControl;
+    [SerializeField] private TMP_Text levelHeader;
+ 
 
 
     void Start()
     {
-
+        levelHeader.text = "";
         levels.level = new LevelData[GameManager.MaxLevel];
         for (int i = 0; i < GameManager.MaxLevel; i++)
         {
@@ -55,7 +58,8 @@ public class LevelGenerator : MonoBehaviour
             levels = JsonUtility.FromJson<Levels>(jsonString);
 
             GameManager.TargetsCount = 0;
-            GameManager.ballSpeed = levels.level[levelNum].ballSpeed;
+            GameManager.ballSpeed = levels.level[levelNum].ballSpeed;            
+            levelHeader.text = "Level " + levels.level[levelNum].levelNumber.ToString();
 
             for (int i = 0; i < levels.level[levelNum].targets.Length; i++)
             {
@@ -82,11 +86,7 @@ public class LevelGenerator : MonoBehaviour
                     targetsControl.targetGiftType = levels.level[levelNum].targets[i].giftType;
                     currentClone = null;
                 }
-
-                
-
-
-            }
+            }             
         }
         else
         {
@@ -101,7 +101,7 @@ public class LevelGenerator : MonoBehaviour
         
         
 
-        levels.level[0].levelNumber = 0;
+        levels.level[0].levelNumber = 1;
         levels.level[0].ballSpeed = 50f;
         int i = 0;
 
@@ -117,7 +117,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        levels.level[1].levelNumber = 1;
+        levels.level[1].levelNumber = 2;
         levels.level[1].ballSpeed = 50f;
         i = 0;
 

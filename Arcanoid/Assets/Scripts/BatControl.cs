@@ -13,10 +13,15 @@ public class BatControl : MonoBehaviour
     //Рассстояние от центра биты до ее края
     private float Offset = 12f;
 
+    private Color defaultColor;
+    private Renderer batRenderer;
+
 
     private void Start()
     {
         
+        batRenderer = GetComponent<Renderer>();
+        defaultColor = batRenderer.material.color;
         leftBorder = GameManager.LeftBorderX;
         rightBorder = GameManager.RightBorderX;
 
@@ -32,6 +37,27 @@ public class BatControl : MonoBehaviour
             GameManager.batPosition = transform.position;
         }
         
+    }
+
+    private void Update()
+    {
+        //Изменение цвета биты в зависимости от используемого подарка
+        if(GameManager.usingGiftType != "")
+        {
+            if(GameManager.usingGiftType == "shoot")
+            {
+                batRenderer.material.color = Color.black;
+            }
+            else if(GameManager.usingGiftType == "sticky")
+            {
+                batRenderer.material.color = Color.yellow;
+            }            
+        }
+        else if(batRenderer.material.color != defaultColor) 
+        {
+            batRenderer.material.color = defaultColor;
+            
+        }
     }
     // Начальная позиция для биты
     public void BatStartPosition()

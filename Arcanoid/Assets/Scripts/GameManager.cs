@@ -126,6 +126,8 @@ public class GameManager : MonoBehaviour
         if (nextLevel && CurrentLevel < MaxLevel)
         {
             nextLevel = false;
+            usingGiftType = "";
+            usingGiftTime = 0f;
             levelGenerator.BuildLevel(CurrentLevel);
             ballOnBat = true;
             ballControl.StartPosition();
@@ -159,7 +161,7 @@ public class GameManager : MonoBehaviour
     private void GiftInActive()
     {
        
-        if(usingGiftTime > 0)
+        if(usingGiftTime > 0 && !onPause && TargetsCount != 0)
         {
             if(usingGiftType == "shoot")
             {
@@ -228,7 +230,7 @@ public class GameManager : MonoBehaviour
                 EOLMenu.enabled = true;
             }
         }
-        else  //Ошибочный вызов функции
+        else  //Повторный вызов функции при смене кадра
         {
             Time.timeScale = 0f;
         }
