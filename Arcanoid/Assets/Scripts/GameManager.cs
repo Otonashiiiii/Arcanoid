@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem.iOS;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     //Счетчик времени действия подарка
     public static float usingGiftTime;
+    public static bool destroyAllGifts;
 
     //Признак открытого окна сообщений
     private bool messageOpen = false;
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    private GameObject obj, bulletObject;
+    private GameObject obj;
     private LevelGenerator levelGenerator;
     private BallControl ballControl;
 
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Canvas message;
     [SerializeField] private TMP_Text pauseHeader;
     [SerializeField] private TMP_Text messageHeader;
+    [SerializeField] private GameObject bulletPrefab;
 
     void Awake()
     {
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour
         catchGift= false;
         usingGiftType = "";
         usingGiftTime = 0f;
+        destroyAllGifts = false;
 
         obj = GameObject.Find("LeftBorder");
         LeftBorderX = obj.transform.position.x;
@@ -97,7 +100,6 @@ public class GameManager : MonoBehaviour
         obj = GameObject.Find("RightBorder");
         RightBorderX = obj.transform.position.x;
 
-        bulletObject = GameObject.Find("Bullet");
     }
 
     private void Start()
@@ -126,11 +128,13 @@ public class GameManager : MonoBehaviour
         if (nextLevel && CurrentLevel < MaxLevel)
         {
             nextLevel = false;
+            destroyAllGifts = true;
             usingGiftType = "";
             usingGiftTime = 0f;
             levelGenerator.BuildLevel(CurrentLevel);
             ballOnBat = true;
             ballControl.StartPosition();
+            //destroyAllGifts = false;
             
         }
         // Вызов меню паузы / завершения уровня
@@ -187,7 +191,7 @@ public class GameManager : MonoBehaviour
         Vector3 bulletStartPosition = batPosition;
         bulletStartPosition.z -= 2f;
 
-        GameObject currentBullet = Instantiate(bulletObject, bulletStartPosition, Quaternion.Euler(90, 0, 0));
+        GameObject currentBullet = Instantiate(bulletPrefab, bulletStartPosition, Quaternion.Euler(90, 0, 0));
         Rigidbody bulletRigidBody = currentBullet.GetComponent<Rigidbody>();
 
         bulletRigidBody.linearVelocity = new Vector3(0f, 0f, bulletSpeed);

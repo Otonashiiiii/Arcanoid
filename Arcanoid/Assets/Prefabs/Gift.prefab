@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1536898166936598678}
   - component: {fileID: 1206630933856010207}
   - component: {fileID: 5717867065171955832}
+  - component: {fileID: 3454741032450446186}
+  - component: {fileID: 8798839158487309708}
   m_Layer: 0
   m_Name: Gift
   m_TagString: Untagged
@@ -29,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 195, y: 0.5, z: -13.04979}
-  m_LocalScale: {x: 1.5369705, y: 2.3219705, z: 1.1931}
+  m_LocalScale: {x: 3.3132474, y: 4.1769896, z: 2.3181932}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,3 +116,45 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3454741032450446186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658198611848066886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f9574bd67c9bf4bb237a5479c0b4b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GiftControl
+  giftType: 
+  shootMaterial: {fileID: 2100000, guid: 63c54f00a4fcf2349aceca53bf2f54ff, type: 2}
+  stickyMaterial: {fileID: 2100000, guid: 66ef5b11a46850a469ccce499077b865, type: 2}
+--- !u!54 &8798839158487309708
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658198611848066886}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0

@@ -5,11 +5,12 @@ using System.Collections;
 
 public class TargetsControl : MonoBehaviour
 {
-    [SerializeField] private TMP_Text scoreValue;
     public string targetGiftType;
-    private GameObject giftObject, currentGift;
+    [SerializeField] private GameObject giftPrefab;
     private Vector3 startGiftPosition;
     private GiftControl giftControl;
+    private TMP_Text scoreValue;
+    private GameObject obj;
 
     private int collisionCount;
 
@@ -27,10 +28,11 @@ public class TargetsControl : MonoBehaviour
         {
             collisionCount = 3;
         }
-        giftObject = GameObject.Find("Gift");
         startGiftPosition = transform.position;
         startGiftPosition.z += 3f;
 
+        obj = GameObject.Find("ScoreValue");
+        scoreValue = obj.GetComponent<TMP_Text>();
     }
         
     // Обработка попадания в мишень шариком
@@ -72,7 +74,7 @@ public class TargetsControl : MonoBehaviour
 
         if (targetGiftType != "")
         {
-            giftControl = Instantiate(giftObject, startGiftPosition, Quaternion.Euler(0, 0, 90)).GetComponent<GiftControl>();
+            giftControl = Instantiate(giftPrefab, startGiftPosition, Quaternion.Euler(0, 0, 90)).GetComponent<GiftControl>();
             giftControl.giftType = targetGiftType;
 
             targetGiftType = "";

@@ -2,12 +2,12 @@ using System.Collections;
 using System.IO;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
+
 
 public class LevelGenerator : MonoBehaviour
 {
 
-    private GameObject simpleTarget, doubleTarget, tripleTarget, currentClone;
+    private GameObject currentClone;
     private float startX;
     private float startZ;
     private float stepX = 12f;
@@ -22,7 +22,10 @@ public class LevelGenerator : MonoBehaviour
     private string jsonString;
     private TargetsControl targetsControl;
     [SerializeField] private TMP_Text levelHeader;
- 
+    [SerializeField] private GameObject simpleTarget;
+    [SerializeField] private GameObject doubleTarget;
+    [SerializeField] private GameObject tripleTarget;
+
 
 
     void Start()
@@ -35,17 +38,11 @@ public class LevelGenerator : MonoBehaviour
             levels.level[i].targets = new Targets[maxCol * maxLine];
         }
 
-        
-        simpleTarget = GameObject.Find("SimpleTarget");
-        doubleTarget = GameObject.Find("DoubleTarget");
-        tripleTarget = GameObject.Find("TripleTarget");
         currentClone = null;
         startX = GameManager.LeftBorderX - 8f;
         startZ = GameManager.UpBorderZ + 10f;
 
         //CreateLevel();
-
-        //BuildLevel(0);
     }
 
     //Построение уровня (вывод целей) на сцене из предварительно заготовленного файла

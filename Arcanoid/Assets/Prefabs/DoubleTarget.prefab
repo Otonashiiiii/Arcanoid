@@ -126,3 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetsControl
   scoreValue: {fileID: 0}
+  targetGiftType: 
+  giftPrefab: {fileID: 1658198611848066886, guid: 91cbbb855e21cfe48a0084540aefcdc0, type: 3}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6975026804460942247}
   m_Layer: 0
   m_Name: SimpleTarget
-  m_TagString: Untagged
+  m_TagString: SimpleTargets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5979640484828961824}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c54fd6b43e297e946a4e23ef55ab5e72, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -125,3 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ab70ff4fe08a04fa597d9fb906a06e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetsControl
+  scoreValue: {fileID: 0}
+  targetGiftType: 
+  giftPrefab: {fileID: 1658198611848066886, guid: 91cbbb855e21cfe48a0084540aefcdc0, type: 3}

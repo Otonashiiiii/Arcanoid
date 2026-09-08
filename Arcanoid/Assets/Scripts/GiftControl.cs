@@ -28,7 +28,14 @@ public class GiftControl : MonoBehaviour
         giftRigidBody = GetComponent<Rigidbody>();
         giftRigidBody.linearVelocity = new Vector3(0f, 0f, giftSpeed);
     }
-    
+
+    private void Update()
+    {
+        if(GameManager.TargetsCount == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
