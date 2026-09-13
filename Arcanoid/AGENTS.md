@@ -2,7 +2,7 @@
 - Project name: Arcanoid
 - Unity version: Unity 6000.5.3f1
 - Active game object:
-  - Name: EOLExit
+  - Name: Gift
   - Tag: Untagged
-  - Layer: UI
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

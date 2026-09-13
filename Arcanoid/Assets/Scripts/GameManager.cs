@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
        //Установка глобальных переменных
         GameScore = 0;
-        MaxLevel = 2;
+        MaxLevel = 3;
         LivesLeft = 5;
         CurrentLevel = 0;
         onPause = false;

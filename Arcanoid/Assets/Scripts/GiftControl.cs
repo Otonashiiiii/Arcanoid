@@ -11,6 +11,7 @@ public class GiftControl : MonoBehaviour
     [SerializeField] private Material shootMaterial;
     [SerializeField] private Material stickyMaterial;
     private Renderer giftRenderer;
+    private int bornLivesLeft;
 
 
     private void Start()
@@ -27,11 +28,12 @@ public class GiftControl : MonoBehaviour
 
         giftRigidBody = GetComponent<Rigidbody>();
         giftRigidBody.linearVelocity = new Vector3(0f, 0f, giftSpeed);
+        bornLivesLeft = GameManager.LivesLeft;
     }
 
     private void Update()
     {
-        if(GameManager.TargetsCount == 0)
+        if(GameManager.TargetsCount == 0 || bornLivesLeft > GameManager.LivesLeft) 
         {
             Destroy(gameObject);
         }
